@@ -1,0 +1,33 @@
+.forgot-password--inner{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.forgot-password{
+    width: 100%;
+    height: 100vh;
+}
+.forgot-password--form{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.forgot-text{
+    color: dimgray;
+    font-size: 14px;
+}
+.forgot-password--form button{
+    width: 100%;
+    height: 40px;
+}
+.forgot-password--form input{
+    height: 40px;
+}
+.forgot-password--form a{
+    color: #000c17;
+    font-weight: 500;
+}

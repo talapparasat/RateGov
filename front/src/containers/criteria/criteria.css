@@ -1,0 +1,35 @@
+.list-item-category{
+    background: #eae9e9;
+    padding-left: 30px!important;
+    font-weight: 500;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+}
+.block-title{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.service-type-color{
+    width: 10px;
+    height: 10px;
+    background: #d4d7dd;
+}
+.serviceType{
+    display: flex;
+    align-items: center;
+}
+.category-color{
+    width: 10px;
+    height: 10px;
+    background: #eae9e9;
+}
+.criteria-color{
+    width: 10px;
+    height: 10px;
+    background: #f6f6f6;
+}
+.serviceType span{
+    padding-left: 5px;
+}

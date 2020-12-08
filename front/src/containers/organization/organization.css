@@ -1,0 +1,109 @@
+.h5-title{
+    font-size: 24px;
+
+}
+.organization{
+    text-align: left;
+    height: 100%;
+}
+.add-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container-add{
+    width: 50%;
+    margin:0 auto;
+
+}
+.container-nav {
+    width: 70%;
+    margin:0 auto;
+}
+.ant-form-item{
+    margin-bottom: 14px;
+}
+.ant-form-item input{
+    padding: 20px 10px ;
+}
+.ant-form label{
+    font-size: 12px;
+    color:#9E9E9E;
+}
+.organization-main{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.title-p{
+    font-size: 14px;
+    color: #000000;
+    font-weight: 400;
+}
+.org-title{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.basic-text{
+    color: #212121;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.is-empty{
+    border:1px solid #e7e7e7;
+    width: 100%;
+    font-style: italic;
+    color: #cccccc;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 30px 0;
+}
+.admin .ant-radio + span{
+    padding-left: 0;
+    color: #212121;
+    font-size: 16px;
+    word-break: break-word;
+}
+.admin {
+    width: 100%;
+    margin: 20px 0;
+}
+.admin .ant-radio-wrapper{
+    padding: 20px 0;
+    display: block;
+    border-top:  1px solid #ccc;
+    width: 100%;
+}
+.admin .ant-radio-wrapper:last-child{
+    border-bottom: 1px solid #ccc;
+}
+
+
+.admin .ant-radio-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.admin .ant-radio-inner {
+    border-radius: 50%;
+    margin-left: 150px;
+}
+.admin .ant-radio-checked::after{
+    border:none;
+}
+.admin .ant-form-item{
+    margin-bottom: 8px;
+}
+.admin .ant-form-item-children{
+    display: flex;
+}
+.example {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+}

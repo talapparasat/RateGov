@@ -1,0 +1,21 @@
+.main-info--title{
+    display: flex;
+
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.container-confirm{
+    width: 50%;
+    margin: 0 auto;
+}
+.main-info{
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 20px 0;
+}
+.add-inner{
+    width: 100%;
+}
+.text{
+    font-size:17px;
+}

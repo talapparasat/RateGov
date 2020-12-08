@@ -1,0 +1,168 @@
+.analytics {
+    text-align: left!important;
+}
+.analytics-top {
+    display: flex;
+    justify-content: space-between;
+}
+.filter-region {
+    display: flex;
+    flex-direction: column;
+}
+.filter-region p {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.filter-region div {
+    display: flex;
+}
+.filter-region h2 {
+    font-size: 24px;
+}
+.analytics-tabs.ant-tabs {
+    width: 250px;
+}
+.filter-analytics button {
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.12);
+    padding: 8px 18px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    outline: none;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.filter-analytics button:hover {
+    color: #000000;
+    transition: .4s;
+    background-color: #fec235;
+}
+.excel-button {
+    background-color: #fec235;
+    color: #000000!important;
+    border: none!important;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+.filter-analytics button:focus {
+    border: solid 1px #fec235;
+}
+.analytics-reviews {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.review-card {
+    width: calc(33.3% - 16px);
+    margin: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.02);
+    border: solid 1px #f1f1f1;
+    background-color: #ffffff;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+.card-item {
+    width: calc(33.3% - 16px);
+    margin: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.02);
+    border: solid 1px #f1f1f1;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.gender-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+.analytics-gender {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.review-card h2 {
+    font-size: 40px;
+    margin-bottom: 4px !important;
+}
+.review-card span {
+    font-size: 16px;
+    color: #808080;
+}
+.review-card:first-child {
+    margin: 8px 8px 8px 0;
+}
+.review-card:last-child {
+    margin: 8px 0 8px 8px;
+}
+.card-item:first-child {
+    margin: 8px 8px 8px 0;
+}
+.card-item:last-child {
+    margin: 8px 0 8px 8px;
+}
+.line-chart {
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.02);
+    border: solid 1px #f1f1f1;
+    height: 572px;
+    width: 66%;
+}
+.filter-line {
+    display: flex;
+    align-items: center;
+}
+.filter-line p {
+    margin-right: 8px;
+    color: #808080;
+    margin-bottom: 0!important;
+}
+.line-element{
+    height: 85% ;
+}
+.line-chart--top  {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.charts {
+    display: flex;
+}
+.bar-chart {
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.02);
+    border: solid 1px #f1f1f1;
+    height: 572px;
+    width: 32%;
+    margin-left: 24px;
+}
+.gender-text-img {
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+}
+.analytics-inner .ant-menu-item {
+    width: 205px!important;
+}
+.gender-card h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 0!important;
+}
+.card-item h1 {
+    font-size: 20px;
+}
+.gender-card span {
+    font-size: 16px;
+    color: #808080;
+}
+.gender-icon {
+    width: 30%;
+}
+.gender-icon img {
+    width: 100%;
+}
+/*.filter-analytics button:target {*/
+/*    border: solid 1px #fec235;*/
+/*}*/

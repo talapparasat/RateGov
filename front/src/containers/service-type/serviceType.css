@@ -1,0 +1,25 @@
+.span-active{
+    font-weight: 500;
+
+    border-bottom: 1px dashed #999;
+}
+.span{
+    cursor: pointer;
+}
+.list{
+    overflow-y: auto;
+    height: 220px;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    background: #f6f6f6;
+    padding-left: 60px!important;
+    border-bottom: 1px solid #ccc;
+}
+.ant-switch.ant-switch-checked{
+    background-color: #000c17;
+}
+.ant-form-item input {
+    padding: 10px;
+}

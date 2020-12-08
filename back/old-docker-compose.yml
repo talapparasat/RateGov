@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  mongo-rs0-1:
+    image: "mongo-start"
+    build: ./mongo-rs0-1
+    ports:
+      - "27020:27020"
+    volumes:
+      - ./mongo-rs0-1/data:/data/db
+
+    depends_on:
+      - "mongo-rs0-2"
+      - "mongo-rs0-3"
+
+  mongo-rs0-2:
+    image: "mongo"
+    command: --replSet rs0 --oplogSize 128
+    ports:
+      - "27018:27020"
+    volumes:
+      - ./mongo-rs0-2/data:/data/db
+
+  mongo-rs0-3:
+    image: "mongo"
+    command: --replSet rs0 --oplogSize 128
+    ports:
+      - "27019:27020"
+    volumes:
+      - ./mongo-rs0-3/data:/data/db
+
+  setup-rs:
+    image: "setup-rs"
+    build: ./setup
+    depends_on:
+      - "mongo-rs0-1"
+
+  adminmongo:
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"
+
+  #Test Application
+  digital-back:
+    image: node:11
+    working_dir: /usr/app
+    command: npm run build-docker
+    ports:
+      - "6000:6000"
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - "setup-rs"

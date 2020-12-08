@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://digitalagent.vpbx.kcell.kz",
+      "secure": false
+    }
+  }
