@@ -18,5 +18,8 @@ Saаs-based system for evaluating the work of government agencies and business i
     - Web-Sockets
     - Reducers
     - Ant-Design
-    
+
+## Screenshots
+<img src="https://github.com/talapparasat/RateGov/blob/main/screenshots/1.png" width="300"/><hr/>
+
 
