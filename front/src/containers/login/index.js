@@ -60,7 +60,8 @@ class Login extends Component{
                         <div className="login-inner">
                             <div className="login-form--inner">
                                 <div className="logo">
-                                    <img src="/assets/logo.png" alt="logo"/>
+                                    {/* <img src="/assets/logo.png" alt="logo"/> */}
+                                    <h2>Rate Gov</h2>
                                 </div>
                                 <p className="title">Войти в матрицу</p>
                                 <Form  onSubmit={this.handleSubmit} className="login-form">

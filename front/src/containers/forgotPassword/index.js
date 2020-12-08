@@ -44,7 +44,8 @@ class ForgotPassword extends Component{
                     <div className="forgot-password--inner">
                         <div className="forgot-password--form">
                             <div className="logo">
-                                <img src="/assets/logo.png" alt="logo"/>
+                                <p>Rate Gov</p>
+                                {/* <img src="/assets/logo.png" alt="logo"/> */}
                             </div>
                             <p className="title">Забыли пароль?</p>
                             <p className="forgot-text">Введите электронную почту чтобы восстановить пароль</p>

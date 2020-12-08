@@ -31,7 +31,8 @@ class MenuOperator extends Component{
 
             <Menu mode="inline" style={{textAlign:'left'}}  defaultSelectedKeys={[selectedKey]}>
                 <div style={{padding:"20px 0"}} className="logo">
-                    <img src="/assets/logo.png" alt="logo"/>
+                    <p>Rate Gov</p>
+                    {/* <img src="/assets/logo.png" alt="logo"/> */}
                 </div>
                 <Menu.Item  key="1">
                     <Link to={'/dashboard'}>
