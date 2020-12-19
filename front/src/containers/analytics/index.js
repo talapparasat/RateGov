@@ -388,6 +388,33 @@ class Analytics extends Component {
                                     />
                                 </div>
                             </div>
+                            {this.state.keyRegion === "1" && analytics ? (
+                                <div>
+                                    <PeopleBlock
+                                        visible={!this.state.visible}
+                                        filter={this.state.key}
+                                    />
+                                    <Rating
+                                        raions={
+                                            analytics
+                                                ? analytics.raionsRating
+                                                : {}
+                                        }
+                                        regions={
+                                            analytics
+                                                ? analytics.regionsRating
+                                                : {}
+                                        }
+                                        services={
+                                            analytics
+                                                ? analytics.servicesRating
+                                                : {}
+                                        }
+                                    />
+                                </div>
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </div>
                 </Spin>
