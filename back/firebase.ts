@@ -14,9 +14,6 @@ const firebaseUp = () => {
 };
 
 const sendNotification = (title: string, body: string, type:string, token:string, sourceId: string) => {
-
-    console.log(token);
-
     let payload = {
         notification: {
             title,
@@ -26,8 +23,6 @@ const sendNotification = (title: string, body: string, type:string, token:string
             sourceId
         }
     };
-
-    console.log(payload);
 
     let options = {
         priority: "high",
@@ -44,8 +39,6 @@ const sendNotification = (title: string, body: string, type:string, token:string
 
 
 const sendWebPush = (title: string, body: string, type:string, tokens:string[], sourceId: string) => {
-
-    console.log({sendTokens: tokens});
 
     let message = {
         notification: {

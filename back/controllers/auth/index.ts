@@ -89,8 +89,6 @@ const signUpWithPhone = async ({phone, token}: userSignUpWithPhoneData) => {
 
         try {
 
-            console.log("Into controller");
-
             let user = await User.findOne({phone: {mobile: [phone]}});
 
             if (user) {
@@ -104,8 +102,6 @@ const signUpWithPhone = async ({phone, token}: userSignUpWithPhoneData) => {
             });
 
             await newUserInstance.save();
-
-            console.log(newUserInstance);
 
             // bus.emit('event.user.registered.with.phone', {
             //     userId: newUserInstance._id,
