@@ -356,6 +356,9 @@ class Analytics extends Component {
                                     </button>
                                 </div>
                             </div>
+                            <ReviewBlock
+                                review={analytics ? analytics.reviewsCount : {}}
+                            />
                         </div>
                     </div>
                 </Spin>
