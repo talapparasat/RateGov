@@ -359,6 +359,35 @@ class Analytics extends Component {
                             <ReviewBlock
                                 review={analytics ? analytics.reviewsCount : {}}
                             />
+                            <div className="charts">
+                                <LineChart
+                                    categories={
+                                        analytics
+                                            ? analytics.categoriesRating
+                                            : {}
+                                    }
+                                    region={this.state.keyRegion}
+                                    filter={this.state.period}
+                                    start={
+                                        this.state.start
+                                            ? this.state.start._d
+                                            : ""
+                                    }
+                                    end={
+                                        this.state.end ? this.state.end._d : ""
+                                    }
+                                />
+                                <div className="bar-chart">
+                                    <BarChart
+                                        social={
+                                            analytics ? analytics.social : {}
+                                        }
+                                        region={this.state.keyRegion}
+                                        visible={!this.state.visible}
+                                        filter={this.state.period}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Spin>
