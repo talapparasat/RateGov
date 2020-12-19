@@ -325,10 +325,36 @@ class Analytics extends Component {
                                         проблем
                                     </p>
                                 </div>
-                                <p>
-                                    по Механизму загрузки аналитики и разрешения
-                                    проблем
-                                </p>
+                                <div className="filter-analytics">
+                                    <Popover
+                                        onVisibleChange={
+                                            this.handleVisibleChange
+                                        }
+                                        visible={this.state.visible}
+                                        placement="bottom"
+                                        title={textFilter}
+                                        content={contentFilter}
+                                        trigger="click"
+                                    >
+                                        <button>
+                                            <Icon
+                                                style={{ marginRight: "7px" }}
+                                                type="filter"
+                                            />
+                                            {this.state.filterTitle}
+                                        </button>
+                                    </Popover>
+                                    <button
+                                        className="excel-button"
+                                        onClick={this.exportAnalytics}
+                                    >
+                                        <Icon
+                                            style={{ marginRight: "7px" }}
+                                            type="file"
+                                        />
+                                        Выгрузить в Excel
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
