@@ -25,7 +25,6 @@ const importServiceProviders = async (filepath: string) => {
     return new Promise(async (resolve, reject) => {
 
         try {
-            console.log(__dirname);
             let rows = await readXlsxFile(__dirname + '/../../../public/' + filepath, {sheet: 1});
 
 

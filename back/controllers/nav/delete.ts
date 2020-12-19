@@ -174,8 +174,6 @@ const handleRaionDelete = async (navId: string) => {
 
             let result:any = {};
 
-            console.log("Is deleted");
-
             let navServiceProvidersCount = await ServiceProvider.find({
                 navId
             }).countDocuments().session(session);

@@ -205,8 +205,6 @@ const getByPrevIdWithMaxOrders = async (prevId: string | null) => {
 
         try {
 
-            console.log(prevId);
-
             let navs = await Nav.aggregate([
                 {
                     '$match': {

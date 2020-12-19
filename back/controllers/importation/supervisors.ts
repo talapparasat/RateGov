@@ -67,7 +67,6 @@ const connectSupervisorsWithServiceProviders = async (row: any, index: number, s
         try {
             index = index + 1;
 
-            console.log({row, index});
 
             if (row.length != 5) {
                 throw new ERROR(`Строка: ${index}\nError: Строка с неправильным количеством колонок`)

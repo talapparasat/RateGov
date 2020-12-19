@@ -200,8 +200,6 @@ const reset = async ({email}: userResetData) => {
                 numbers: true
             });
 
-            console.log({newPassword});
-
             user.setPassword(newPassword);
             await user.save();
 
