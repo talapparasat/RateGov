@@ -136,3 +136,205 @@ const getReviews = async (userId: string = null) => {
     });
 
 };
+
+
+const getReviewsSuperadmin= async () => {
+
+    const data = await Review.aggregate([
+        {
+            '$lookup': {
+                'from': 'service-providers',
+                'localField': 'serviceProviderId',
+                'foreignField': '_id',
+                'as': 'ServiceProvider'
+            }
+        }, {
+            '$unwind': {
+                'path': '$ServiceProvider',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'service-provider-types',
+                'localField': 'ServiceProvider.serviceProviderTypeId',
+                'foreignField': '_id',
+                'as': 'ServiceProviderType'
+            }
+        }, {
+            '$unwind': {
+                'path': '$ServiceProviderType',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$addFields': {
+                'ServiceProvider.ServiceProviderType': '$ServiceProviderType'
+            }
+        }, {
+            '$lookup': {
+                'from': 'users',
+                'localField': 'userId',
+                'foreignField': '_id',
+                'as': 'User'
+            }
+        }, {
+            '$unwind': {
+                'path': '$User',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'navs',
+                'localField': 'ServiceProvider.navId',
+                'foreignField': '_id',
+                'as': 'Raion'
+            }
+        }, {
+            '$unwind': {
+                'path': '$Raion',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'navs',
+                'localField': 'Raion.prevId',
+                'foreignField': '_id',
+                'as': 'Region'
+            }
+        }, {
+            '$unwind': {
+                'path': '$Region',
+                'preserveNullAndEmptyArrays': false
+            }
+        },
+    ]);
+
+    return data
+
+};
+
+
+const getReviewsSupervisor = async (userId: string) => {
+
+    const data = await S_SP.aggregate([
+        {
+            '$match': {
+                'userId': new ObjectId(userId)
+            }
+        }, {
+            '$lookup': {
+                'from': 'service-providers',
+                'localField': 'serviceProviderId',
+                'foreignField': '_id',
+                'as': 'ServiceProvider'
+            }
+        }, {
+            '$unwind': {
+                'path': '$ServiceProvider',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$ServiceProvider'
+            }
+        }, {
+            '$match': {
+                'suspended': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'reviews',
+                'localField': '_id',
+                'foreignField': 'serviceProviderId',
+                'as': 'Reviews'
+            }
+        }, {
+            '$unwind': {
+                'path': '$Reviews',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$addFields': {
+                'Reviews.ServiceProvider._id': '$_id',
+                'Reviews.ServiceProvider.navId': '$navId',
+                'Reviews.ServiceProvider.nameRu': '$nameRu',
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$Reviews'
+            }
+        }, {
+            '$lookup': {
+                'from': 'service-providers',
+                'localField': 'serviceProviderId',
+                'foreignField': '_id',
+                'as': 'ServiceProvider'
+            }
+        }, {
+            '$unwind': {
+                'path': '$ServiceProvider',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'users',
+                'localField': 'userId',
+                'foreignField': '_id',
+                'as': 'User'
+            }
+        }, {
+            '$unwind': {
+                'path': '$User',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'navs',
+                'localField': 'ServiceProvider.navId',
+                'foreignField': '_id',
+                'as': 'Raion'
+            }
+        }, {
+            '$unwind': {
+                'path': '$Raion',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'navs',
+                'localField': 'Raion.prevId',
+                'foreignField': '_id',
+                'as': 'Region'
+            }
+        }, {
+            '$unwind': {
+                'path': '$Region',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$lookup': {
+                'from': 'service-provider-types',
+                'localField': 'ServiceProvider.serviceProviderTypeId',
+                'foreignField': '_id',
+                'as': 'ServiceProviderType'
+            }
+        }, {
+            '$unwind': {
+                'path': '$ServiceProviderType',
+                'preserveNullAndEmptyArrays': false
+            }
+        }, {
+            '$addFields': {
+                'ServiceProvider.ServiceProviderType': '$ServiceProviderType'
+            }
+        },
+    ]);
+
+    return data
+};
+
+
+export = {
+    getReviews,
+    getServiceProviders,
+    ...analytics
+}
